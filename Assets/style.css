@@ -11,7 +11,8 @@
 
 html{
     scroll-behavior: smooth;
-    background: url(Images/Background.png) fixed center center no-repeat;
+    background: url(Images/OldCouch.jpg) fixed center no-repeat;
+    background-size: cover;
 }
 
 header{
@@ -34,20 +35,19 @@ button {
     cursor: pointer;
 }
 
-h1, h3 {
+h1 {
     text-align: center;
     color: #efefef;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5), 1px 1px 10px rgba(0, 0, 0, 0.5);
     font-family: Alvaro;
     font-size: 125px;
-    margin: 60px auto 45px;
+    margin: 60px auto 10px;
     position: relative;
-    z-index: 1;
 }
 
-h3 {
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 10px auto 5px;
+h2 {
+    font-family:sans-serif;
+    text-align: center;
 }
 
 img {
@@ -55,8 +55,20 @@ img {
     padding: 10px;
 }
 
-img, .platform {
-    height: 45px;
+#stream-links img {
+    height: 40px;
+}
+
+.display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    transition: .5s ease all;
+}
+
+.display img:hover {
+    transform: scale(1.2);
 }
 
 #logo {
@@ -76,33 +88,29 @@ img, .platform {
     justify-content: center;
 }
 
-#refresh {
-    border-radius: 12.5px 0 0 12.5px;
-    transition: 0;
-}
-
-#lucky{
+#lucky {
     border-radius: 0 12.5px 12.5px 0;
     color: #efefef;
     transition: 0;
 }
 
-#lucky:hover {
+#refresh {
+    border-radius:  12.5px 0 0 12.5px;
+    color: #efefef;
+    transition: 0;
+}
+
+#lucky:hover,
+#refresh:hover,
+#start:hover {
     background-color: #454545;
 }
 
-#refresh:hover {
-    background-color: #454545;
-}
-
-#lucky:active {
+#lucky:active,
+#refresh:active,
+#start:active {
     background-color: rgb(62, 62, 62);
 }
-
-#refresh:active {
-    background-color: rgb(62, 62, 62);
-}
-
 /** Start Button**/
 #start-button {
     width: 100%;
@@ -119,21 +127,13 @@ img, .platform {
     border: 0;
     width: 350px;
     height: 125px;
-    border-radius: 62.5px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: x-large;
     font-weight: 800;
     color: #efefef;
+    display: none;
 }
-
-#start:hover {
-    background-color: #45454580;
-}
-
-#start:active {
-    background-color: rgba(62, 62, 62, 0.76);
-}
-
 /** Results Display**/
 #results {
     height: 350px;
@@ -141,13 +141,12 @@ img, .platform {
     margin: 0 auto 5%;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     overflow-x: hidden;
     display: flex;
     flex-wrap: nowrap;
     transition: 0;
-    display: none;
 }
 
 #results:hover {
@@ -173,9 +172,34 @@ img, .platform {
     width: 250px;
     min-width: 250px;
     margin: 15px;
-    background-color: aqua;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.541);
     margin: auto clamp(15px, 5%, 55px);
-    display: none;
+}
+
+.title {
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(0,0,0,.541) 25%, rgba(255,255,255,0) 100%, rgba(0,0,0,0) 100%);
+    border-radius: 10px 10px 0 0;
+    color: #efefef;
+    padding-top: 5px;
+}
+
+.picture {
+    width: 230px;
+    height: 220px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.rating {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0) 25%, rgba(0,0,0,.541) 100%);
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    bottom: 0;
 }
 
 /* Streaming Services*/
