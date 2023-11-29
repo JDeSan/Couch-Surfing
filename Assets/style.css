@@ -19,12 +19,6 @@ header{
     height: 60px;
 }
 
-footer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-}
-
 a {
     text-decoration: none;
     color: #efefef;
@@ -59,6 +53,10 @@ h3 {
 img {
     height: 55px;
     padding: 10px;
+}
+
+img, .platform {
+    height: 45px;
 }
 
 #logo {
@@ -121,7 +119,7 @@ img {
     border: 0;
     width: 350px;
     height: 125px;
-    border-radius: 125px 0 125px 0;
+    border-radius: 62.5px;
     cursor: pointer;
     font-size: x-large;
     font-weight: 800;
@@ -178,4 +176,18 @@ img {
     background-color: aqua;
     margin: auto clamp(15px, 5%, 55px);
     display: none;
+}
+
+/* Streaming Services*/
+#stream-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    bottom: 5px;
+}
+
+.links {
+    display: inline-flex;
+    margin: auto;
 }
