@@ -40,15 +40,17 @@ button {
     cursor: pointer;
 }
 
-h1, h2 {
+h1, h3 {
     text-align: center;
     color: #efefef;
     font-family: Alvaro;
-    font-size: 108px;
-    margin: 25px auto 15px;
+    font-size: 125px;
+    margin: 60px auto 45px;
+    position: relative;
+    z-index: 1;
 }
 
-h2 {
+h3 {
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px auto 5px;
@@ -66,6 +68,7 @@ img {
     justify-content: center;
 }
 
+/** Nav Bar Styling**/
 #nav-bar {
     width: 250px;
     height: 25px;
@@ -102,8 +105,38 @@ img {
     background-color: rgb(62, 62, 62);
 }
 
+/** Start Button**/
+#start-button {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+}
+#start {
+    display: inline-block;
+    background-color: #0000008a;
+    padding: 2px 5px;
+    border: 0;
+    width: 350px;
+    height: 125px;
+    border-radius: 125px 0 125px 0;
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: 800;
+    color: #efefef;
+}
 
+#start:hover {
+    background-color: #45454580;
+}
 
+#start:active {
+    background-color: rgba(62, 62, 62, 0.76);
+}
+
+/** Results Display**/
 #results {
     height: 350px;
     width: calc(100% - 25px);
@@ -137,10 +170,12 @@ img {
    background-color: #0000008a; 
 }
 
-.scroll {
-    height: 150px;
-    width: 500px;
+.display {
+    height: 300px;
+    width: 250px;
+    min-width: 250px;
     margin: 15px;
     background-color: aqua;
-    min-width: 500px;
+    margin: auto clamp(15px, 5%, 55px);
+    display: none;
 }
