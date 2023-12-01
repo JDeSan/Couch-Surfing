@@ -181,7 +181,7 @@ img {
 }
 
 .display:hover {
-    box-shadow: 0 0 15px 1px #efefef;
+    box-shadow: 0 0 15px 1px #5c5c5c;
     transform: scale(1.05);
     border-radius: 0;
     
