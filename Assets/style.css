@@ -146,7 +146,7 @@ img {
     font-size: x-large;
     font-weight: 800;
     color: #efefef;
-    display: none;
+    display: true;
 }
 /** Results Display**/
 #results {
