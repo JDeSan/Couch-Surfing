@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       Movie: "The Shawshank Redemption",
       "TV Show": "Breaking Bad"
     },
-    "Sci-Fi": {
+    Thriller: {
       Movie: "Blade Runner 2049",
       "TV Show": "Black Mirror"
     },
@@ -88,21 +88,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   async function getMovieRecommendation(genre, type) {
-   var apiUrl = `https://movie-database-alternative.p.rapidapi.com/${type.toLowerCase()}/${genre.toLowerCase()}`;
-   var response = await fetch(apiUrl, {
+   //var apiUrl = `https://movie-database-alternative.p.rapidapi.com/${type.toLowerCase()}/${genre.toLowerCase()}`;
+   var apiUrl = `https://movie-database-alternative.p.rapidapi.com/?s=${genre.toLowerCase()}&r=json&page=1`;
+    fetch(apiUrl, {
       method: 'GET',
       headers: {
         'X-RapidAPI-Host': rapidApiHost,
         'X-RapidAPI-Key': apiKey
       }
-    });
-   var data = await response.json();
-    if (data && data.length > 0) {
+    })
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      console.log(data)
+    })
    
-      return data[0].title;
-    } else {
-    
-      return recommendations[genre][type];
-    }
   }
 });
